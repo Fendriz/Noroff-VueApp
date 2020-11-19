@@ -6,27 +6,22 @@
         <div class ="recipe_title">
             <p>{{title}} </p><br>
         </div>
-        
         <div class = "recipe_list">
             <b>Ingredients: </b><br><br>
                <p>{{ingredients}}</p> <br>
-          
         </div>
         <div class="recipe_link">
             <b>Link: </b><br><br>
             <a :href="link">{{link}}</a>
         </div>
-
     </div>
 </template>
-
 <script>
     export default {
         name: 'recipListComponent',
         props: ['title','recipimg','ingredients','link']
     }
 </script>
-
 <style scoped>
    .recipe{
        background-color: #243A69;
@@ -41,7 +36,6 @@
        margin-left:10px;
        border-radius: 10px;
        border: solid 2px white;
-       
    }
    .recipe_title{
        font-size:24px;

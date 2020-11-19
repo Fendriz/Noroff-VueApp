@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div v-for="item in recipes" :key="item">
+        <div v-for="item in recipes" :key="item.id">
             <recipListComponent v-bind:title="item.title"
                                 v-bind:recipimg="item.thumbnail"
                                 v-bind:ingredients="item.ingredients"
@@ -21,8 +21,6 @@ export default {
   },
   data(){
     return{
-        
-        
       recipes: []
     }
   },
@@ -37,13 +35,13 @@ export default {
     .then(function(res){
       
         app.recipes = res.results;
+        for (let i = 0; i < app.recipes.length; i++) {
+            app.recipes.id= i;
+        }
     })
-
   }
-
 }
 </script>
-
 <style>
 .body{
     font-family: Arial, Helvetica, sans-serif;
